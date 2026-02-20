@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alfaiataria Macedo Leal | Tradição e Excelência no Rio de Janeiro</title>
+    
+    <!-- Google Fonts: Questrial (Headings) e Montserrat (Body - fallback para Mont) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Questrial&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            green: '#7c947f',
+                            light: '#ffffff',
+                            dark: '#1a202c',
+                            gray: '#f7f7f7'
+                        }
+                    },
+                    fontFamily: {
+                        heading: ['Questrial', 'sans-serif'],
+                        body: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* Suavidade na rolagem e ajustes finos */
+        html { scroll-behavior: smooth; }
+        .bg-hero {
+            /* Substitua a URL abaixo pela sua imagem no imgbb */
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1593030761757-71fae45fa0e7?q=80&w=2000&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .text-shadow { text-shadow: 1px 1px 3px rgba(0,0,0,0.3); }
+    </style>
+</head>
+<body class="font-body text-brand-dark bg-brand-light antialiased overflow-x-hidden">
+
+    <!-- Header / Navbar -->
+    <header class="fixed w-full z-50 transition-all duration-300 bg-brand-light/95 backdrop-blur-sm border-b border-brand-green/20">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 h-24 flex items-center justify-between">
+            <!-- Logo (Substitua a imagem pela logo oficial) -->
+            <a href="#" class="flex items-center gap-3 group">
+                <img src="https://i.ibb.co/SD6hLT0k/macedologo.png" alt="Logo Macedo Leal" class="w-10 h-10 sm:w-12 sm:h-12 object-contain">
+                <div class="flex flex-col">
+                    <span class="font-heading text-lg sm:text-xl tracking-widest text-brand-dark uppercase">Macedo Leal</span>
+                    <span class="text-[10px] sm:text-xs tracking-[0.2em] text-brand-green">Alfaiataria</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex gap-8">
+                <a href="#historia" class="text-sm uppercase tracking-wider hover:text-brand-green transition-colors">A História</a>
+                <a href="#servicos" class="text-sm uppercase tracking-wider hover:text-brand-green transition-colors">Serviços</a>
+                <a href="#educacao" class="text-sm uppercase tracking-wider hover:text-brand-green transition-colors">O Mestre Ensina</a>
+                <a href="#contato" class="text-sm uppercase tracking-wider hover:text-brand-green transition-colors">Contato</a>
+            </nav>
+
+            <!-- CTA Header -->
+            <div class="hidden md:block">
+                <a href="#contato" class="border border-brand-green text-brand-green px-6 py-2 hover:bg-brand-green hover:text-brand-light transition-colors text-sm uppercase tracking-wider">
+                    Agendar Visita
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-brand-dark" id="mobile-menu-btn">
+                <i data-lucide="menu" class="w-8 h-8"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 bg-brand-light z-40 hidden flex-col items-center justify-center gap-8 pt-20">
+        <a href="#historia" class="text-xl font-heading uppercase tracking-widest hover:text-brand-green mobile-link">A História</a>
+        <a href="#servicos" class="text-xl font-heading uppercase tracking-widest hover:text-brand-green mobile-link">Serviços</a>
+        <a href="#educacao" class="text-xl font-heading uppercase tracking-widest hover:text-brand-green mobile-link">O Mestre Ensina</a>
+        <a href="#contato" class="text-xl font-heading uppercase tracking-widest hover:text-brand-green mobile-link">Contato</a>
+        <button id="close-menu" class="absolute top-8 right-6">
+            <i data-lucide="x" class="w-8 h-8"></i>
+        </button>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="min-h-[100dvh] bg-hero flex items-center pt-28 pb-12">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 w-full">
+            <div class="max-w-2xl text-brand-light">
+                <span class="block text-brand-green font-medium tracking-[0.3em] uppercase mb-4 text-xs sm:text-sm">Desde 1927 • 4ª Geração</span>
+                <h1 class="font-heading text-4xl sm:text-5xl md:text-7xl mb-6 leading-tight text-shadow">A Essência do<br>Caimento Perfeito</h1>
+                <p class="text-base sm:text-lg md:text-xl font-light mb-10 text-gray-200 max-w-lg leading-relaxed">
+                    Mais de 50 anos de maestria dedicados à arte da alfaiataria sob medida. Valorizando o trabalho manual e a tradição no coração do Rio de Janeiro.
+                </p>
+                <a href="#contato" class="inline-block bg-brand-green text-brand-light px-8 sm:px-10 py-4 uppercase tracking-widest text-xs sm:text-sm hover:bg-brand-dark transition-all duration-300">
+                    Descubra a Experiência
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- History / About Section -->
+    <section id="historia" class="py-16 md:py-24 bg-brand-light">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
+                <!-- Imagem do Mestre (Substitua a URL) -->
+                <div class="relative">
+                    <img src="https://i.ibb.co/gMZRjmV1/macedotirandomedida.png" alt="Mestre Alfaiate Macedo Leal tirando medidas" class="w-full h-auto object-cover shadow-xl">
+                    <div class="absolute -bottom-4 -right-4 sm:-bottom-6 sm:-right-6 w-32 h-32 sm:w-48 sm:h-48 bg-brand-green/10 -z-10"></div>
+                </div>
+                
+                <!-- Texto da História -->
+                <div>
+                    <h2 class="font-heading text-3xl md:text-4xl mb-6 text-brand-dark">A Tradição nas Mãos de um Mestre</h2>
+                    <div class="w-16 h-1 bg-brand-green mb-8"></div>
+                    <p class="mb-6 leading-relaxed font-light text-gray-700">
+                        A alfaiataria é uma arte de precisão, paciência e profundo respeito pelas formas. Na 4ª geração de alfaiates da família, Macedo Leal carrega em suas mãos o peso e a glória de mais de meio século de experiência.
+                    </p>
+                    <p class="mb-8 leading-relaxed font-light text-gray-700">
+                        Nossa agulha já costurou parte da história cultural do Brasil. Fomos responsáveis por figurinos icônicos nos teatros do Rio de Janeiro e em grandes produções da televisão brasileira, como as inesquecíveis <em>Marquesa de Santos</em> e <em>Amazônia</em> na Rede Manchete, além de trabalhos magistrais na TV Globo.
+                    </p>
+                    <div class="grid grid-cols-2 gap-6 border-t border-brand-green/20 pt-8">
+                        <div>
+                            <span class="block text-3xl font-heading text-brand-green mb-1">50+</span>
+                            <span class="text-xs uppercase tracking-widest text-gray-500">Anos de Experiência</span>
+                        </div>
+                        <div>
+                            <span class="block text-3xl font-heading text-brand-green mb-1">4ª</span>
+                            <span class="text-xs uppercase tracking-widest text-gray-500">Geração de Alfaiates</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicos" class="py-16 md:py-24 bg-brand-gray">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 text-center">
+            <span class="text-brand-green tracking-[0.2em] uppercase text-xs font-semibold mb-2 block">O que fazemos</span>
+            <h2 class="font-heading text-3xl md:text-4xl mb-12 md:mb-16 text-brand-dark">Nossos Serviços</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+                <!-- Serviço 1 -->
+                <div class="bg-brand-light p-10 shadow-sm hover:shadow-md transition-shadow text-left group border border-transparent hover:border-brand-green/30">
+                    <i data-lucide="scissors" class="w-10 h-10 text-brand-green mb-6 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="font-heading text-2xl mb-4">Confecção Sob Medida</h3>
+                    <p class="font-light text-gray-600 leading-relaxed mb-6">
+                        A verdadeira elegância não se compra pronta; ela é construída. Criamos paletós, calças, saias e conjuntos completos, para os públicos masculino e feminino. Um ritual onde o tecido encontra a anatomia perfeita, desenhado exclusivamente para o seu corpo.
+                    </p>
+                </div>
+
+                <!-- Serviço 2 -->
+                <div class="bg-brand-light p-10 shadow-sm hover:shadow-md transition-shadow text-left group border border-transparent hover:border-brand-green/30">
+                    <i data-lucide="ruler" class="w-10 h-10 text-brand-green mb-6 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="font-heading text-2xl mb-4">Consertos e Alta Costura</h3>
+                    <p class="font-light text-gray-600 leading-relaxed mb-6">
+                        Uma peça de valor histórico ou afetivo merece uma segunda vida. Somos especialistas em ajustes minuciosos e consertos de peças de alta costura. O reparo de alto nível que preserva a essência e a estrutura original da sua vestimenta.
+                    </p>
+                </div>
+            </div>
+
+            <div class="mt-16 bg-brand-dark text-brand-light p-8 md:p-12 text-left md:text-center shadow-lg border-l-4 border-brand-green">
+                <i data-lucide="info" class="w-8 h-8 text-brand-green mx-auto mb-4 hidden md:block"></i>
+                <h4 class="font-heading text-xl mb-3 text-brand-green">Política de Precificação e Orçamentos</h4>
+                <p class="font-light text-gray-300 md:max-w-3xl md:mx-auto">
+                    A verdadeira alfaiataria exige toque, medida exata e o olhar minucioso do mestre. Por respeitarmos profundamente esse processo artesanal, <strong>orçamentos são realizados exclusivamente de forma presencial</strong> em nosso ateliê.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- YouTube / Education Section -->
+    <section id="educacao" class="py-16 md:py-24 bg-brand-light border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+                <div>
+                    <span class="text-brand-green tracking-[0.2em] uppercase text-xs font-semibold mb-2 block">Transmissão de Sabedoria</span>
+                    <h2 class="font-heading text-3xl md:text-4xl mb-6">O Mestre Ensina</h2>
+                    <p class="mb-6 leading-relaxed font-light text-gray-700 text-sm sm:text-base">
+                        Acreditamos que o conhecimento milenar da alfaiataria não pode se perder no tempo. Em nosso canal no YouTube, o Mestre Macedo Leal compartilha pílulas de conhecimento, técnicas de corte tradicionais e dicas de estilo indispensáveis.
+                    </p>
+                    <p class="mb-8 leading-relaxed font-light text-gray-700">
+                        Descubra como avaliar o caimento do seu paletó, entenda a linguagem dos tecidos e acompanhe os bastidores de uma verdadeira alfaiataria carioca.
+                    </p>
+                    <a href="https://www.youtube.com/@MacedoLeal" target="_blank" class="inline-flex items-center gap-2 border border-brand-green text-brand-dark px-8 py-3 hover:bg-brand-green hover:text-brand-light transition-all uppercase tracking-widest text-sm font-medium">
+                        <i data-lucide="youtube" class="w-5 h-5"></i>
+                        Acessar Canal
+                    </a>
+                </div>
+                
+                <!-- Video Embed (Substitua o src pelo ID do vídeo desejado) -->
+                <div class="relative w-full aspect-video shadow-2xl bg-gray-200">
+                    <iframe class="absolute top-0 left-0 w-full h-full" 
+                            src="https://www.youtube.com/embed/SxVIWYXN8w4" 
+                            title="YouTube video player" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instagram Section -->
+    <section class="py-16 md:py-24 bg-brand-gray">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-10 gap-4">
+                <div>
+                    <span class="text-brand-green tracking-[0.2em] uppercase text-xs font-semibold mb-2 block">Nosso Dia a Dia</span>
+                    <h2 class="font-heading text-3xl md:text-4xl">Siga no Instagram</h2>
+                </div>
+                <a href="https://www.instagram.com/alfaiataria_macedoleal/" target="_blank" class="text-brand-green hover:text-brand-dark transition-colors flex items-center gap-2 font-medium tracking-wide text-sm sm:text-base">
+                    @alfaiataria_macedoleal <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+            </div>
+
+            <!-- Instagram Grid (Substitua as URLs pelas imagens do imgbb) -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <a href="https://www.instagram.com/alfaiataria_macedoleal/" target="_blank" class="group relative overflow-hidden aspect-square bg-gray-200 block">
+                    <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Detalhe alfaiataria">
+                    <div class="absolute inset-0 bg-brand-dark/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <i data-lucide="instagram" class="text-brand-light w-8 h-8"></i>
+                    </div>
+                </a>
+                <a href="https://www.instagram.com/alfaiataria_macedoleal/" target="_blank" class="group relative overflow-hidden aspect-square bg-gray-200 block">
+                    <img src="https://images.unsplash.com/photo-1585435421671-0c16764628ce?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Tecidos e medidas">
+                    <div class="absolute inset-0 bg-brand-dark/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <i data-lucide="instagram" class="text-brand-light w-8 h-8"></i>
+                    </div>
+                </a>
+                <a href="https://www.instagram.com/alfaiataria_macedoleal/" target="_blank" class="group relative overflow-hidden aspect-square bg-gray-200 block">
+                    <img src="https://images.unsplash.com/photo-1598808503746-f34c53b93f3b?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Paletó sob medida">
+                    <div class="absolute inset-0 bg-brand-dark/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <i data-lucide="instagram" class="text-brand-light w-8 h-8"></i>
+                    </div>
+                </a>
+                <a href="https://www.instagram.com/alfaiataria_macedoleal/" target="_blank" class="group relative overflow-hidden aspect-square bg-gray-200 block">
+                    <img src="https://images.unsplash.com/photo-1578932750294-f5075e85f44a?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Ferramentas de alfaiate">
+                    <div class="absolute inset-0 bg-brand-dark/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <i data-lucide="instagram" class="text-brand-light w-8 h-8"></i>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Location Section -->
+    <section id="contato" class="py-16 md:py-24 bg-brand-light">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
+                
+                <!-- Informações de Contato -->
+                <div class="flex flex-col justify-center">
+                    <span class="text-brand-green tracking-[0.2em] uppercase text-xs font-semibold mb-2 block">Agende seu horário</span>
+                    <h2 class="font-heading text-3xl md:text-4xl mb-8">Visite Nosso Ateliê</h2>
+                    
+                    <p class="font-light text-gray-600 mb-10 leading-relaxed text-sm sm:text-base">
+                        Faça-nos uma visita e descubra a diferença que o trabalho manual e a excelência podem fazer no seu vestir. Lembre-se: avaliações de peças e <strong>orçamentos são realizados apenas presencialmente</strong>.
+                    </p>
+
+                    <div class="space-y-6 mb-12">
+                        <div class="flex items-start gap-4">
+                            <i data-lucide="map-pin" class="w-6 h-6 text-brand-green flex-shrink-0 mt-1"></i>
+                            <div>
+                                <h4 class="font-heading font-semibold text-lg mb-1">Endereço</h4>
+                                <p class="font-light text-gray-600">Galeria Condor - Largo do Machado, 29<br>Lojas 209/406 - Catete<br>Rio de Janeiro - RJ</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-4">
+                            <i data-lucide="phone" class="w-6 h-6 text-brand-green flex-shrink-0 mt-1"></i>
+                            <div>
+                                <h4 class="font-heading font-semibold text-lg mb-1">Atendimento</h4>
+                                <p class="font-light text-gray-600 mb-1"><strong class="font-medium text-brand-dark">Sob Medida:</strong> +55 (22) 98116-3037</p>
+                                <p class="font-light text-gray-600"><strong class="font-medium text-brand-dark">Consertos:</strong> +55 (21) 99774-9671</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Botões WhatsApp -->
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="https://wa.me/5522981163037" target="_blank" class="inline-flex items-center justify-center gap-3 bg-brand-green text-brand-light px-6 py-4 uppercase tracking-widest text-xs sm:text-sm hover:bg-brand-dark transition-all duration-300 w-full sm:w-auto text-center">
+                            <svg viewBox="0 0 24 24" class="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+                            Sob Medida
+                        </a>
+                        <a href="https://wa.me/5521997749671" target="_blank" class="inline-flex items-center justify-center gap-3 bg-transparent border border-brand-green text-brand-green px-6 py-4 uppercase tracking-widest text-xs sm:text-sm hover:bg-brand-green hover:text-brand-light transition-all duration-300 w-full sm:w-auto text-center">
+                            <svg viewBox="0 0 24 24" class="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+                            Consertos
+                        </a>
+                    </div>
+
+                    <!-- Fotos das Salas -->
+                    <div class="mt-12 border-t border-gray-200 pt-8">
+                        <div class="grid grid-cols-2 gap-4 sm:gap-6">
+                            <!-- Foto Sala 209 -->
+                            <div class="group">
+                                <div class="overflow-hidden bg-gray-200 aspect-[4/3] mb-3">
+                                    <!-- Substitua a URL abaixo pela foto real da sala 209 -->
+                                    <img src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?q=80&w=600&auto=format&fit=crop" alt="Interior da Sala 209" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                                </div>
+                                <p class="text-xs uppercase tracking-[0.15em] text-brand-dark font-medium text-center">Sala 209</p>
+                            </div>
+                            
+                            <!-- Foto Sala 426 -->
+                            <div class="group">
+                                <div class="overflow-hidden bg-gray-200 aspect-[4/3] mb-3">
+                                    <!-- Substitua a URL abaixo pela foto real da sala 426 -->
+                                    <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=600&auto=format&fit=crop" alt="Interior da Sala 426" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                                </div>
+                                <p class="text-xs uppercase tracking-[0.15em] text-brand-dark font-medium text-center">Sala 426</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Google Maps -->
+                <div class="h-96 lg:h-auto min-h-[400px] w-full bg-gray-200 border border-brand-green/20">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d229.65696435498447!2d-43.178945785513285!3d-22.931384726571512!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x997f86972f50cb%3A0xe6260edc53efdb45!2sAlfaiataria%20Macedo%20Leal!5e0!3m2!1spt-BR!2sbr!4v1771557267558!5m2!1spt-BR!2sbr" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-dark text-brand-light py-10 border-t border-brand-green/30">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-3">
+                <img src="https://i.ibb.co/SD6hLT0k/macedologo.png" alt="Logo Macedo Leal" class="w-10 h-10 object-contain bg-brand-light rounded-sm p-1">
+                <div class="flex flex-col">
+                    <span class="font-heading tracking-widest uppercase text-sm sm:text-base">Macedo Leal</span>
+                </div>
+            </div>
+            
+            <p class="text-gray-400 text-xs sm:text-sm font-light text-center md:text-left">
+                &copy; <script>document.write(new Date().getFullYear())</script> Alfaiataria Macedo Leal. Todos os direitos reservados.
+            </p>
+
+            <div class="flex gap-6 md:gap-4 mt-4 md:mt-0">
+                <a href="https://www.instagram.com/alfaiataria_macedoleal/" target="_blank" class="text-gray-400 hover:text-brand-green transition-colors"><i data-lucide="instagram" class="w-6 h-6 md:w-5 md:h-5"></i></a>
+                <a href="https://www.youtube.com/@MacedoLeal" target="_blank" class="text-gray-400 hover:text-brand-green transition-colors"><i data-lucide="youtube" class="w-6 h-6 md:w-5 md:h-5"></i></a>
+                <a href="#" class="text-gray-400 hover:text-brand-green transition-colors"><i data-lucide="facebook" class="w-6 h-6 md:w-5 md:h-5"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Inicialização dos ícones e Menu Mobile -->
+    <script>
+        lucide.createIcons();
+
+        // Script simples para o Menu Mobile
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const closeBtn = document.getElementById('close-menu');
+        const links = document.querySelectorAll('.mobile-link');
+
+        btn.addEventListener('click', () => {
+            menu.classList.remove('hidden');
+            menu.classList.add('flex');
+            document.body.style.overflow = 'hidden'; // impede rolagem fundo
+        });
+
+        const closeMenu = () => {
+            menu.classList.add('hidden');
+            menu.classList.remove('flex');
+            document.body.style.overflow = 'auto';
+        };
+
+        closeBtn.addEventListener('click', closeMenu);
+        links.forEach(link => link.addEventListener('click', closeMenu));
+    </script>
+</body>
+</html>
